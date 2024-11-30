@@ -1,6 +1,9 @@
 # dependencies
 /node_modules
 
+# building
+size-plugin.json
+
 # production
 /build
 
