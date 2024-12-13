@@ -35,7 +35,7 @@ This extension contains features intended to improve your experience on revision
 
 ## Credits
 
--   [Chrome Extension Developer Tools](https://marketplace.visualstudio.com/items?itemName=aaravb.chrome-extension-developer-tools) was used to generate this extension's template.
+- [Chrome Extension Developer Tools](https://marketplace.visualstudio.com/items?itemName=aaravb.chrome-extension-developer-tools) was used to generate this extension's template.
 
 ## Contributing
 
@@ -43,16 +43,16 @@ Thank you for wanting to improve PMT Buddy! This is mainly my personal project t
 
 ### Building
 
--   Download required libraries with `npm install`
--   Debug with `npm run watch`
--   Build with `npm run build`, then zip the contents of the `build` folder.
+- Download required libraries with `npm install`
+- Debug with `npm run watch`
+- Build with `npm run build`, then zip the contents of the `build` folder.
 
 ### Extension structure
 
--   `public` contains the `manifest.json`, `popup.html`, and any other assets used for the HTML.
--   `src` contains CSS and JS files.
-    -   `modules` contains folders for each of the websites, and `index.js` runs each feature.
-    -   `utils` has some helper classes and functions.
-    -   `background.js` is the service worker.
-    -   `contentScript.js` redirects to `./modules/index.js`.
-    -   `popup.js` is run when the extension popup is opened.
+- `public` contains the `manifest.json`, `popup.html`, and any other assets used for the HTML.
+- `src` contains CSS and JS files.
+    - `modules` contains folders for each of the websites, and `index.js` runs each feature.
+    - `utils` has some helper classes and functions.
+    - `background.js` is the service worker.
+    - `contentScript.js` redirects to `./modules/index.js`.
+    - `popup.js` is run when the extension popup is opened.

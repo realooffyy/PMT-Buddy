@@ -1,9 +1,8 @@
 "use strict";
 
 export const pmt_CleanUpPdfs = () => {
-    const link = document.getElementsByTagName("iframe")[0]?.src;
-
-    if (!link) return
-    if (!/.*\.pdf/.test(link)) return
-    window.location.href = link;
-}
+	const url = window.location.href;
+	if (!url.startsWith("https://www.physicsandmathstutor.com/pdf-pages/"))
+		return;
+	window.location.href = decodeURIComponent(url.split("?pdf=")[1]);
+};
