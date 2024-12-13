@@ -17,7 +17,7 @@ TODO: https://stackoverflow.com/a/39332340
         "Avoid using querySelector and especially the extremely slow querySelectorAll."
 */
 
-(async function() {
+(async function () {
     const storage = await BrowserStorage.getAll();
 
     // if there's still undefined initialise the storage
@@ -28,7 +28,7 @@ TODO: https://stackoverflow.com/a/39332340
     /** URL of the current page */
     const url = window.location.href;
 
-	// TODO: make a url comparison function
+    // TODO: make a url comparison function
     // on load
     addEventListener("load", () => {
         // PMT
@@ -43,14 +43,14 @@ TODO: https://stackoverflow.com/a/39332340
                 sme_removePremiumPlanBanners();
         }
         // studocu
-        if (constants.urls.studocu.some(testUrl => url.startsWith(testUrl)))) {
+        if (constants.urls.studocu.some(testUrl => url.startsWith(testUrl))) {
             if (storage.studocu_HidePremiumBanners)
                 studocu_HidePremiumBanners();
         }
     });
 
     customUrlChangeEvent();
-    window.addEventListener("urlchange", () => {});
+    window.addEventListener("urlchange", () => { });
 })();
 
 const customUrlChangeEvent = () => {
