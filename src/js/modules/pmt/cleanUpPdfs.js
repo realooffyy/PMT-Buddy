@@ -1,8 +1,14 @@
 "use strict";
 
-export const pmt_CleanUpPdfs = () => {
-	const url = window.location.href;
-	if (!url.startsWith("https://www.physicsandmathstutor.com/pdf-pages/"))
-		return;
-	window.location.href = decodeURIComponent(url.split("?pdf=")[1]);
+import { URLManager } from "../../utils/URLManager";
+
+/**
+ *
+ * @param {URLManager} urlObj
+ */
+export const pmt_CleanUpPdfs = (urlObj) => {
+	if (urlObj.path.startsWith("/pdf-pages")) {
+		const newLink = decodeURIComponent(urlObj.link.split("?pdf=")[1]);
+		urlObj.changeLink(newLink);
+	}
 };

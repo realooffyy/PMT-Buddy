@@ -1,6 +1,6 @@
 {
 	"name": "pmt-buddy",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "Improves your experience on some revision websites.",
 	"private": true,
 	"scripts": {

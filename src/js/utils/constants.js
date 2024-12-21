@@ -1,14 +1,11 @@
 export default {
 	contact_email: "cleaver-exact-chip@duck.com",
 
-    image: {
-        pmt_sketch: "https://i.ibb.co/stVfRPL/icon-128.png"
-    },
-
-	urls: {
-		pmt: ["https://www.physicsandmathstutor.com/",
-			  "https://www.physicsandmathstutor.co.uk/"],
-		sme: ["https://www.savemyexams.com/"],
-		studocu: ["https://www.studocu.com/"]
+	domains: {
+		pmt: ["physicsandmathstutor.com", "physicsandmathstutor.co.uk"],
+		pmt_com: "physicsandmathstutor.com",
+		pmt_co_uk: "physicsandmathstutor.co.uk",
+		sme: ["savemyexams.com"],
+		studocu: ["studocu.com"]
 	}
 };

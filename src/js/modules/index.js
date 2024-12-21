@@ -1,17 +1,21 @@
 "use strict";
+
 import constants from "../utils/constants";
 import { SettingsInstance } from "../background";
 import { BrowserStorage } from "../utils/BrowserStorage";
+import { URLManager } from "../utils/URLManager";
 
 import { pmt_CleanUpPdfs } from "./pmt/cleanUpPdfs";
 import { pmt_HidePmtTutor } from "./pmt/hidePmtTutor";
+import { pmt_HideUnnecessaryElements } from "./pmt/hideUnnecessaryElements";
+import { pmt_redirectToCoUk } from "./pmt/redirectToCoUk";
 
 import { sme_unblockRevisionNotes } from "./savemyexams/unblockRevisionNotes";
 import { sme_removePremiumPlanBanners } from "./savemyexams/removePremiumPlanBanners";
 
 import { studocu_HidePremiumBanners } from "./studocu/studocu_HidePremiumBanners";
 
-/* 
+/*
 TODO: make a MutationObserver function instead of repeating it everywhere
 TODO: https://stackoverflow.com/a/39332340
         "Avoid using querySelector and especially the extremely slow querySelectorAll."
@@ -25,32 +29,49 @@ TODO: https://stackoverflow.com/a/39332340
 		await SettingsInstance.initStorage();
 	}
 
-	/** URL of the current page */
-	const url = window.location.href;
+	/** URLManager
+	 * @type {URLManager}
+	 */
+	const urlObj = new URLManager(window.location.href);
+	/** Domains of websites with features */
+	const domains = constants.domains;
 
-    // TODO: make a url comparison function
-    // on load
-    addEventListener("load", () => {
-        // PMT
-        if (constants.urls.pmt.some(testUrl => url.startsWith(testUrl))) {
-            if (storage.pmt_CleanUpPdfs) pmt_CleanUpPdfs();
-            if (storage.pmt_BlockPmtTutor) pmt_HidePmtTutor();
-        }
-        // SaveMyExams
-        if (constants.urls.sme.some(testUrl => url.startsWith(testUrl))) {
-            if (storage.sme_unblockRevisionNotes) sme_unblockRevisionNotes();
-            if (storage.sme_removePremiumPlanBanners)
-                sme_removePremiumPlanBanners();
-        }
-        // studocu
-        if (constants.urls.studocu.some(testUrl => url.startsWith(testUrl))) {
-            if (storage.studocu_HidePremiumBanners)
-                studocu_HidePremiumBanners();
-        }
-    });
+	// --------------
+	// preload
+	// --------------
 
-    customUrlChangeEvent();
-    window.addEventListener("urlchange", () => {});
+	// PMT
+	if (urlObj.isDomain(domains.pmt)) {
+		if (storage.pmt_redirectToCoUk) pmt_redirectToCoUk(urlObj);
+		if (storage.pmt_CleanUpPdfs) pmt_CleanUpPdfs(urlObj);
+	}
+
+	// --------------
+	// on load
+	// --------------
+
+	addEventListener("load", () => {
+		// PMT
+		if (urlObj.isDomain(domains.pmt)) {
+			if (storage.pmt_BlockPmtTutor) pmt_HidePmtTutor();
+			if (storage.pmt_HideUnnecessaryElements)
+				pmt_HideUnnecessaryElements();
+		}
+		// SaveMyExams
+		if (urlObj.isDomain(domains.sme)) {
+			if (storage.sme_unblockRevisionNotes) sme_unblockRevisionNotes();
+			if (storage.sme_removePremiumPlanBanners)
+				sme_removePremiumPlanBanners();
+		}
+		// studocu
+		if (urlObj.isDomain(domains.studocu)) {
+			if (storage.studocu_HidePremiumBanners)
+				studocu_HidePremiumBanners();
+		}
+	});
+
+	customUrlChangeEvent();
+	window.addEventListener("urlchange", () => {});
 })();
 
 const customUrlChangeEvent = () => {

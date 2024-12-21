@@ -6,6 +6,7 @@ size-plugin.json
 
 # production
 /build
+scripts/output/
 
 # misc
 .DS_Store

@@ -23,7 +23,6 @@ export const sme_unblockRevisionNotes = () => {
 const unlock = () => {
 	const notice = `
         <div class="Card_card__7rJy4 bg-body-secondary rounded-3 p-4 pmt-buddy-notice">
-            <img src="${constants.image.pmt_sketch}" alt="pmt-buddy-icon" width=40 height=40>
             <h4 class="h5">pmtbuddy-title</h4>
             <div>
                 <p>pmtbuddy-text</p>

@@ -4,17 +4,32 @@ import { Settings } from "./utils/Settings";
 
 /**
  * Instance with all settings.
+ * @type {Settings}
  */
 export const SettingsInstance = new Settings();
 
 SettingsInstance
 	// Physics and Maths Tutor (PMT)
 	.addSetting({
+		name: "Redirect to .co.uk",
+		id: "pmt_redirectToCoUk",
+		category: "Physics and Maths Tutor",
+		defaultValue: true,
+		info: "Redirects the currently unusable .com domain to the .co.uk domain."
+	})
+	.addSetting({
 		name: "Clean up PDFs",
 		id: "pmt_CleanUpPdfs",
 		category: "Physics and Maths Tutor",
 		defaultValue: true,
 		info: "Redirects PDFs to the original source to remove the white sidebar."
+	})
+	.addSetting({
+		name: "Hide unnecessary elements",
+		id: "pmt_HideUnnecessaryElements",
+		category: "Physics and Maths Tutor",
+		defaultValue: true,
+		info: "Hides some unneeded elements like the massive white bar on the top."
 	})
 	.addSetting({
 		name: "Hide paid tutor content",

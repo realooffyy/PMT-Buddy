@@ -1,6 +1,7 @@
 "use strict";
 
 // TODO: use MutationObserver
+// TODO: get rid of querySelectorAll
 
 export const pmt_HidePmtTutor = () => {
 	// top banner
@@ -16,7 +17,6 @@ export const pmt_HidePmtTutor = () => {
 
 	// ads
 	const ads = document.getElementsByTagName("pmt_eoc_parrent");
-	console.log(ads.length);
 
 	// tutor profile box(es)
 	const tutors = document.querySelectorAll(".tutor-profile-box");
@@ -26,17 +26,16 @@ export const pmt_HidePmtTutor = () => {
 	const courses = document.querySelectorAll(".dropshadowboxes-container");
 	courses.forEach((el) => {
 		const links = el.getElementsByTagName("a");
-		if (links)
-			Array.from(links).forEach((link) => {
-				const literalLink = link?.href ?? "";
-				console.log(literalLink);
-				if (
-					/https:\/\/www\.pmt\.education\/(courses|tutor)\/.*/.test(
-						literalLink
-					)
+		if (!links) return;
+		Array.from(links).forEach((link) => {
+			const literalLink = link?.href ?? "";
+			if (
+				/https:\/\/www\.pmt\.education\/(courses|tutor)\/.*/.test(
+					literalLink
 				)
-					el.remove();
-				return;
-			});
+			)
+				el.remove();
+			return;
+		});
 	});
 };

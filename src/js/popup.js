@@ -38,5 +38,3 @@ import { BrowserStorage } from "./utils/BrowserStorage";
 
 	document.addEventListener("DOMContentLoaded", initSettings);
 })();
-
-console.log("hello");

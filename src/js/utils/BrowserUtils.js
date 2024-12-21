@@ -4,7 +4,6 @@
 export class BrowserUtils {
 	static getNamespace() {
 		const broswerNamespace = typeof browser;
-		console.log(broswerNamespace);
 		switch (broswerNamespace) {
 			case "undefined":
 				return "chrome";
