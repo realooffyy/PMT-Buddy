@@ -11,6 +11,12 @@
       		<img height="58" src="https://i.imgur.com/oGxig2F.png" alt="Chrome Web Store">
 		</picture>
 	</a>
+	<a href="https://addons.mozilla.org/firefox/addon/pmt-buddy/">
+    	<picture>
+      		<source srcset="https://i.imgur.com/ZluoP7T.png" media="(prefers-color-scheme: dark)">
+      		<img height="58" src="https://i.imgur.com/4PobQqE.png" alt="Firefox Add-ons">
+	  </picture>
+	</a>
 </p>
 
 ---

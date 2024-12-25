@@ -12,5 +12,4 @@ Issues can be created in this repository.
 Privacy policy: https://gist.github.com/realooffyy/cb46ea1f45a4779dee862e07cd5b2f74
 
 ![icon_128](../images/icon_128.png)
-![small_promo_tile](../images/small_promo_tile.png)
 ![extension_popup](../images/extension_popup.png)
