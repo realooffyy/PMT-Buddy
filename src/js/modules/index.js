@@ -8,7 +8,6 @@ import { URLManager } from "../utils/URLManager";
 import { pmt_CleanUpPdfs } from "./pmt/cleanUpPdfs";
 import { pmt_HidePmtTutor } from "./pmt/hidePmtTutor";
 import { pmt_HideUnnecessaryElements } from "./pmt/hideUnnecessaryElements";
-import { pmt_redirectToCoUk } from "./pmt/redirectToCoUk";
 
 import { sme_unblockRevisionNotes } from "./savemyexams/unblockRevisionNotes";
 import { sme_removePremiumPlanBanners } from "./savemyexams/removePremiumPlanBanners";
@@ -42,7 +41,6 @@ TODO: https://stackoverflow.com/a/39332340
 
 	// PMT
 	if (urlObj.isDomain(domains.pmt)) {
-		if (storage.pmt_redirectToCoUk) pmt_redirectToCoUk(urlObj);
 		if (storage.pmt_CleanUpPdfs) pmt_CleanUpPdfs(urlObj);
 	}
 

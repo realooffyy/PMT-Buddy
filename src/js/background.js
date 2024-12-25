@@ -11,13 +11,6 @@ export const SettingsInstance = new Settings();
 SettingsInstance
 	// Physics and Maths Tutor (PMT)
 	.addSetting({
-		name: "Redirect to .co.uk",
-		id: "pmt_redirectToCoUk",
-		category: "Physics and Maths Tutor",
-		defaultValue: true,
-		info: "Redirects the currently unusable .com domain to the .co.uk domain."
-	})
-	.addSetting({
 		name: "Clean up PDFs",
 		id: "pmt_CleanUpPdfs",
 		category: "Physics and Maths Tutor",
