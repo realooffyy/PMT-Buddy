@@ -29,8 +29,9 @@ def userInput(text):
 # main
 # ---------
 
-build_folder = '../build/'
 script_dir = os.path.dirname(os.path.abspath(__file__))
+os.chdir(script_dir)
+build_folder = '../build/'
 manifest_path = os.path.join(script_dir, '../public/manifest.json')
 build_folder = os.path.join(script_dir, '../build/')
 output_folder = os.path.join(script_dir, './output/')

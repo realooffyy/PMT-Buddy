@@ -30,7 +30,6 @@ This extension contains features intended to improve your experience on revision
 ## Supported websites and features
 
 <details><summary>Physics and Maths Tutor</summary>
-  ● Redirect to .co.uk: Redirects the currently unusable .com domain to the .co.uk domain. <br>
   ● Clean up PDFs: Redirects PDFs to the original source to remove the white sidebar. <br>
   ● Hide unnecessary elements: Hides some unneeded elements like the massive white bar on the top. <br>
   ● Hide paid tutor content: Hides most paid PMT Education content. <br>
